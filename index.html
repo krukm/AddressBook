@@ -11,10 +11,10 @@
 <body>
     <section class="add_contact_form">
         <h1>My Contacts</h1>
-        <form>
-            <input type="text" id="name" placeholder="Name">
-            <input type="text" id="email" placeholder="Email">
-            <input type="text" id="phone" placeholder="Phone">
+        <form id="form">
+            <input type="text" class="name" placeholder="Name">
+            <input type="text" class="email" placeholder="Email">
+            <input type="text" class="phone" placeholder="Phone">
             <select name="relation" id="relation">
                 <optgroup label="relation">
                     <option value="family">Family</option>
@@ -27,12 +27,7 @@
             <button type="button" id="add_button" onclick="addressBook.add();">Add</button>
         </form>
     </section>
-    <section class="contact_card">
-        <section id="name"></section>
-        <section id="email"></section>
-        <section id="phone"></section>
-        <section id="relation"></section>
-    </section>
+    <section class="card_holder"></section>
     <script src="js/script.js"></script>
 </body>
 </html>
