@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <section class="add_contact_form">
+        <h1>My Contacts</h1>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Phone">
+            <select name="relation">
+                <optgroup label="relation">
+                    <option value="family">Family</option>
+                    <option value="friend">Friend</option>
+                    <option value="coworker">Co-Worker</option>
+                    <option value="neighbor">Neighbor</option>
+                    <option value="other">Other</option>
+                </optgroup>
+            </select>
+            <button id="add_button" type="button">Add</button>
+        </form>
+    </section>
+    <section class="contact_card">
+        <section id="name"></section>
+        <section id="email"></section>
+        <section id="phone"></section>
+        <section id="relation"></section>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
