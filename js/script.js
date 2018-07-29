@@ -16,7 +16,7 @@ class AddressBook {
         this.contacts.push(new Contact(inputs[0].value, inputs[1].value, inputs[2].value, selectedValue));
         this.display();
     }
-    deleteAt(index) {
+    delete(index) {
         this.contacts.splice(index, 1);
         this.display();
     }
@@ -24,12 +24,15 @@ class AddressBook {
         document.getElementById("form").reset();
         this.clear();
 
+        let index = 0;
+
         for (let contact of this.contacts) {
             const card = document.createElement("section");
             const name = document.createElement("p");
             const email = document.createElement("p");
             const phone = document.createElement("p");
             const relation = document.createElement("p");
+            const deleteBtn = document.createElement("section");
 
             addCardStyling(card);
 
@@ -37,12 +40,17 @@ class AddressBook {
             email.textContent = `Email: ${contact.email}`;
             phone.textContent = `Phone: ${contact.phone}`;
             relation.textContent = `Relation: ${contact.relation}`;
+            deleteBtn.innerHTML = `<button onclick="addressBook.delete(${index});" class="delete_button material-icons" type="button">delete</button>`;
+
             card.appendChild(name);
             card.appendChild(email);
             card.appendChild(phone);
             card.appendChild(relation);
+            card.appendChild(deleteBtn);
 
             document.querySelector(".card_holder").appendChild(card);
+
+            index++;
         }
     }
     clear() {
@@ -66,6 +74,7 @@ function addCardStyling (cardContent) {
     cardContent.style.backgroundColor = "rgba(255,255,255,0.8)"
     cardContent.style.borderRadius = "5px";
     cardContent.style.flexBasis = "26%";
+    cardContent.style.position = "relative";
 }
 
 const addressBook = new AddressBook();
