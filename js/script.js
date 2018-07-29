@@ -1,5 +1,14 @@
 "use strict";
 
+class Contact {
+    constructor(name, email, phone, relation) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.relation = relation;
+    }
+}
+
 class AddressBook {
     constructor() {
         this.contacts = [];
@@ -34,7 +43,7 @@ class AddressBook {
             const relation = document.createElement("p");
             const deleteBtn = document.createElement("section");
 
-            addCardStyling(card);
+            card.setAttribute("class", "card");
 
             name.textContent = `Name: ${contact.name}`;
             email.textContent = `Email: ${contact.email}`;
@@ -56,25 +65,6 @@ class AddressBook {
     clear() {
         document.querySelector(".card_holder").innerHTML = "";
     }
-}
-
-class Contact {
-    constructor(name, email, phone, relation) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.relation = relation;
-    }
-}
-
-function addCardStyling (cardContent) {
-    cardContent.style.margin = "3em";
-    cardContent.style.padding = "1em";
-    cardContent.style.boxSizing = "border-box";
-    cardContent.style.backgroundColor = "rgba(255,255,255,0.8)"
-    cardContent.style.borderRadius = "5px";
-    cardContent.style.flexBasis = "26%";
-    cardContent.style.position = "relative";
 }
 
 const addressBook = new AddressBook();
